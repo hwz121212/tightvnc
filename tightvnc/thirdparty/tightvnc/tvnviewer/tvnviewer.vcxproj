@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{082F71AD-CDF6-44DE-84F7-9D2D16784B23}</ProjectGuid>
+    <RootNamespace>tvnviewer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugNoUnicode|Win32'" />
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugNoUnicode|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..;$(SolutionDir)thirdparty\zlib-1.2.12\include;$(SolutionDir)thirdparty\jpeg-9e\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>log-writer.lib;libzlib.lib;libjpeg.lib;region.lib;tcp-dispatcher.lib;io-lib.lib;ft-client-lib.lib;ft-common.lib;viewer-core.lib;rfb.lib;file-lib.lib;comctl32.lib;util.lib;gui.lib;win-system.lib;thread.lib;config-lib.lib;client-config-lib.lib;http-server-lib.lib;network.lib;user32.lib;gdi32.lib;advapi32.lib;shell32.lib;comdlg32.lib</AdditionalDependencies>
+      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27amd64%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..;$(SolutionDir)thirdparty\zlib-1.2.12\include;$(SolutionDir)thirdparty\jpeg-9e\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>log-writer.lib;libzlib.lib;libjpeg.lib;region.lib;tcp-dispatcher.lib;io-lib.lib;ft-client-lib.lib;ft-common.lib;viewer-core.lib;rfb.lib;file-lib.lib;comctl32.lib;util.lib;gui.lib;win-system.lib;thread.lib;config-lib.lib;client-config-lib.lib;http-server-lib.lib;network.lib;user32.lib;gdi32.lib;advapi32.lib;shell32.lib;comdlg32.lib</AdditionalDependencies>
+      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27amd64%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDialog.cpp" />
+    <ClCompile Include="AuthenticationDialog.cpp" />
+    <ClCompile Include="BuildTime.cpp" />
+    <ClCompile Include="ConfigurationDialog.cpp" />
+    <ClCompile Include="ConnectionData.cpp" />
+    <ClCompile Include="ConnectionListener.cpp" />
+    <ClCompile Include="ControlTrayIcon.cpp" />
+    <ClCompile Include="DesktopWindow.cpp" />
+    <ClCompile Include="FileExistDialog.cpp" />
+    <ClCompile Include="FileInfoListView.cpp" />
+    <ClCompile Include="FileRenameDialog.cpp" />
+    <ClCompile Include="FileTransferMainDialog.cpp" />
+    <ClCompile Include="FsWarningDialog.cpp" />
+    <ClCompile Include="HelpDialog.cpp" />
+    <ClCompile Include="LoginDialog.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="NamingDefs.cpp" />
+    <ClCompile Include="NewFolderDialog.cpp" />
+    <ClCompile Include="OptionsDialog.cpp" />
+    <ClCompile Include="ResourceStrings.cpp" />
+    <ClCompile Include="ScaleManager.cpp" />
+    <ClCompile Include="TvnViewer.cpp" />
+    <ClCompile Include="ViewerCmdLine.cpp" />
+    <ClCompile Include="ViewerCollector.cpp" />
+    <ClCompile Include="ViewerInstance.cpp" />
+    <ClCompile Include="ViewerMenu.cpp" />
+    <ClCompile Include="ViewerVncAuthHandler.cpp" />
+    <ClCompile Include="ViewerWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AboutDialog.h" />
+    <ClInclude Include="AuthenticationDialog.h" />
+    <ClInclude Include="BuildTime.h" />
+    <ClInclude Include="ConfigurationDialog.h" />
+    <ClInclude Include="ConnectionData.h" />
+    <ClInclude Include="ConnectionListener.h" />
+    <ClInclude Include="ControlTrayIcon.h" />
+    <ClInclude Include="DesktopWindow.h" />
+    <ClInclude Include="FileExistDialog.h" />
+    <ClInclude Include="FileInfoListView.h" />
+    <ClInclude Include="FileRenameDialog.h" />
+    <ClInclude Include="FileTransferMainDialog.h" />
+    <ClInclude Include="FsWarningDialog.h" />
+    <ClInclude Include="HelpDialog.h" />
+    <ClInclude Include="LoginDialog.h" />
+    <ClInclude Include="NamingDefs.h" />
+    <ClInclude Include="NewFolderDialog.h" />
+    <ClInclude Include="OptionsDialog.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ResourceStrings.h" />
+    <ClInclude Include="ScaleManager.h" />
+    <ClInclude Include="TvnViewer.h" />
+    <ClInclude Include="ViewerCmdLine.h" />
+    <ClInclude Include="ViewerCollector.h" />
+    <ClInclude Include="ViewerInstance.h" />
+    <ClInclude Include="ViewerMenu.h" />
+    <ClInclude Include="ViewerVncAuthHandler.h" />
+    <ClInclude Include="ViewerWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\appicon.ico" />
+    <None Include="res\dot.cur" />
+    <None Include="res\fileup.ico" />
+    <None Include="res\ftdir.ico" />
+    <None Include="res\ftfile.ico" />
+    <None Include="res\nocursor.cur" />
+    <None Include="res\smalldot.cur" />
+    <None Include="res\tightvnc.bmp" />
+    <None Include="res\tightvnc48.bmp" />
+    <None Include="res\toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="tvnviewer.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="tvnviewer.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
